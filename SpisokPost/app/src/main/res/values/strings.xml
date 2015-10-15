@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">SpisokPost</string>
+
+    <string name="tv1"> Samsung Android Lab</string>
+    <string name="tv2"> 8 октября в 23:31</string>
+    <string name="tv3"> 2 курс Ваша первая домашка находится в обсуждении: домашка.   </string>
+
+
+    <string-array name="datearr">
+        <item> вчера в 23:50 </item>
+        <item> вчера в 22:00 </item>
+        <item> вчера в 10:03 </item>
+        <item> вчера в 9:34</item>
+        <item> вчера в 7:45</item>
+    </string-array>
+
+    <string-array name="deskrarr">
+        <item> 3 и 4 курс!
+            Напоминаю, ваша пара завтра в 17:00, аудитория 1306. Всем быть с ноутбуками. </item>
+        <item> 2 курс!
+            Ваша первая домашняя работа находится в обсуждении: домашка. </item>
+        <item> 3 курс!
+            Встречаемся сегодня в 17:00, будем обсуждать темы курсовых работ. </item>
+        <item> 2 курс!
+            Сегодня занятия не будет! Следующее в четверг, в 18:00 по расписанию. </item>
+        <item> 2 курс!
+            Напоминаю, что у вас сегодня первое занятие в аудитории 1404. </item>
+
+    </string-array>
+
+</resources>
