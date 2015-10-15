@@ -51,7 +51,7 @@ public class SpisokPostActivity extends AppCompatActivity {
 
     private void fillAdapter() {
         for (int i = 0; i < date.length; i++) {
-            ea.add(new ElementActivity(R.drawable.sams, "Samsung Android Lab", descr[i], R.drawable.dotsvertical, date[i], R.drawable.com, R.drawable.bullhorn, R.drawable.heart));
+            ea.add(new ElementActivity(R.drawable.sams, "Samsung Android Lab", descr[i], R.drawable.dotsvertical11, date[i], R.drawable.com11, R.drawable.bullhorn11, R.drawable.heart11));
         }
     }
 }
