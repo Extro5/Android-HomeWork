@@ -1,16 +1,11 @@
 package com.example.coole.calcfirst;
 
-import android.annotation.TargetApi;
-import android.os.Build;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.method.DigitsKeyListener;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.Objects;
 
 public class CalcActivity extends AppCompatActivity {
 
@@ -25,24 +20,20 @@ public class CalcActivity extends AppCompatActivity {
     private Button btn9;
 
     private Button btnplus;
+    private Button btnc;
     private Button btnmnus;
     private Button btnravno;
     private Button btnnull;
     private TextView tv1;
-    public String str = "";
-    final static int CLEAR = 1;
-    final static int DONT_CLEAR = 0;
-    int clearCalcDisplay = 0;
-    ArrayList<Float> result = new ArrayList<Float>();
-    float number2;
-    float number1;
-    final static int SUBTRACT = 2;
-    final static int ADD = 1;
-    int currentOperation = 0;
-    int nextOperation;
-    final static int EQUALS = 5;
-
-
+    public int num = 0;
+    public int result = 0;
+    public int num1 = 0;
+    public int q = 0;
+    public int num2 = 0;
+    public int num3 = 0;
+    public int z = 0;
+    public int x = 0;
+    public int c = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,18 +54,20 @@ public class CalcActivity extends AppCompatActivity {
         Button btnmnus = (Button) findViewById(R.id.btnmnus);
         Button btnravno = (Button) findViewById(R.id.btnravno);
         Button btnnull = (Button) findViewById(R.id.btnnull);
+        Button btnc = (Button) findViewById(R.id.btnc);
         final TextView tv1 = (TextView) findViewById(R.id.tv1);
 
 
-
-
-
-        tv1.setKeyListener(DigitsKeyListener.getInstance(true, true));
-
         btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
 
+
+                if (num == 0) {
+                    num += 1;
+                } else {
+                    num = num * 10 + 1;
+                }
                 String r = (String) tv1.getText();
 
 
@@ -84,8 +77,13 @@ public class CalcActivity extends AppCompatActivity {
 
 
         btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
+                if (num == 0) {
+                    num += 2;
+                } else {
+                    num = num * 10 + 2;
+                }
                 String r = (String) tv1.getText();
 
 
@@ -96,6 +94,11 @@ public class CalcActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (num == 0) {
+                    num += 3;
+                } else {
+                    num = num * 10 + 3;
+                }
                 String r = (String) tv1.getText();
 
 
@@ -106,6 +109,11 @@ public class CalcActivity extends AppCompatActivity {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (num == 0) {
+                    num += 4;
+                } else {
+                    num = num * 10 + 4;
+                }
                 String r = (String) tv1.getText();
 
 
@@ -116,6 +124,11 @@ public class CalcActivity extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (num == 0) {
+                    num += 5;
+                } else {
+                    num = num * 10 + 5;
+                }
                 String r = (String) tv1.getText();
 
 
@@ -126,6 +139,11 @@ public class CalcActivity extends AppCompatActivity {
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (num == 0) {
+                    num += 6;
+                } else {
+                    num = num * 10 + 6;
+                }
                 String r = (String) tv1.getText();
 
 
@@ -137,12 +155,15 @@ public class CalcActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (clearCalcDisplay == CLEAR) {
-                    tv1.setText("");
+                if (num == 0) {
+                    num += 7;
+                } else {
+                    num = num * 10 + 7;
                 }
-                clearCalcDisplay = DONT_CLEAR;
-                tv1.append("7");
+                String r = (String) tv1.getText();
 
+
+                tv1.setText(r + "7");
             }
         });
 
@@ -150,6 +171,11 @@ public class CalcActivity extends AppCompatActivity {
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (num == 0) {
+                    num += 8;
+                } else {
+                    num = num * 10 + 8;
+                }
                 String r = (String) tv1.getText();
 
 
@@ -160,6 +186,11 @@ public class CalcActivity extends AppCompatActivity {
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (num == 0) {
+                    num += 9;
+                } else {
+                    num = num * 10 + 9;
+                }
                 String r = (String) tv1.getText();
 
 
@@ -175,11 +206,20 @@ public class CalcActivity extends AppCompatActivity {
 
                 String r = (String) tv1.getText();
 
-                if (r != "" ) {
-                    tv1.setText(r + "+");
 
+                tv1.setText(r + "+");
 
+                if (x == 1) {
+                    result = result - num;
+                    x = 0;
+                } else if (x == 0) {
+                    result = result + num;
                 }
+
+                z = 1;
+
+
+                num = 0;
 
 
             }
@@ -189,16 +229,38 @@ public class CalcActivity extends AppCompatActivity {
         btnmnus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String r = (String) tv1.getText();
 
 
-                    calcLogic(SUBTRACT);
+                tv1.setText(r + "-");
+                if (z == 1) {
+
+                    result = result + num;
+                    z = 0;
+
+                } else if ((z == 0) && (c == 0)) {
+                    result = num;
+
+                } else if (z == 0) {
+                    result = result - num;
+                }
+                c = 1;
+                x = 1;
+                num = 0;
+
 
             }
         });
 
         btnnull.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                if (num == 0) {
+                    num += 0;
+                } else {
+                    num = num * 10 + 0;
+                }
                 String r = (String) tv1.getText();
 
 
@@ -209,115 +271,49 @@ public class CalcActivity extends AppCompatActivity {
         });
 
         btnravno.setOnClickListener(new View.OnClickListener() {
-            @TargetApi(Build.VERSION_CODES.KITKAT)
-            @Override
+
             public void onClick(View v) {
+                String r = (String) tv1.getText();
+                if (z == 1) {
+                    result = result + num;
+                    z = 0;
+                    num = 0;
 
-               if ( tv1.getText().length() == 5) {
-
-
-                    String r = (String) tv1.getText();
-                    char a = r.charAt(0);
-                    char b = r.charAt(2);
-                    char c = r.charAt(4);
-
-                    char q = r.charAt(1);
-                    char w = r.charAt(3);
-                    String z = Character.toString(q);
-                    String x = Character.toString(w);
-
-
-                    int e = Character.getNumericValue(a);
-                    int d = Character.getNumericValue(b);
-                    int k = Character.getNumericValue(c);
-
-                    if ((Objects.equals(z, "+")) && (Objects.equals(x, "+"))) {
-
-                        int p = e + d + k;
-                        r = Integer.toString(p);
-                        tv1.setText(r);
-                    } else if (((Objects.equals(z, "+")) && (Objects.equals(x, "-")))) {
-                        int p = e + d - k;
-                        r = Integer.toString(p);
-                        tv1.setText(r);
-                    } else if (((Objects.equals(z, "-")) && (Objects.equals(x, "+")))) {
-                        int p = e - d + k;
-                        r = Integer.toString(p);
-                        tv1.setText(r);
-                    } else if (((Objects.equals(z, "-")) && (Objects.equals(x, "-")))) {
-                        int p = e - d - k;
-                        r = Integer.toString(p);
-                        tv1.setText(r);
-                    }
-                }else if ( tv1.getText().length() == 3) {
-
-                    String r = (String) tv1.getText();
-                    char a = r.charAt(0);
-                    char b = r.charAt(2);
-
-                    char q = r.charAt(1);
-                    String z = Character.toString(q);
-
-                    int e = Character.getNumericValue(a);
-                    int d = Character.getNumericValue(b);
-
-                    if ((Objects.equals(z, "+")) ) {
-
-                        int p = e + d;
-                        r = Integer.toString(p);
-                        tv1.setText(r);
-                    } else if (((Objects.equals(z, "-")))) {
-                        int p = e - d;
-                        r = Integer.toString(p);
-                        tv1.setText(r);
-                    }
+                } else if (x == 1) {
+                    result = result - num;
+                    x = 0;
+                    num = 0;
 
                 }
+
+
+                String str = Integer.toString(result);
+                tv1.setText(str);
 
             }
         });
 
+        btnc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String r = " ";
+                tv1.setText(r);
+
+                num = 0;
+                result = 0;
+                num1 = 0;
+                q = 0;
+                num2 = 0;
+                num3 = 0;
+                z = 0;
+                x = 0;
+                c = 0;
+
+            }
+        });
 
     }
 
 
-    private void calcLogic(int operator) {
-
-        result.add(Float.parseFloat(tv1.getText().toString()));
-
-        if (operator != EQUALS) {
-            nextOperation = operator;
-        } else if (operator == EQUALS) {
-            nextOperation = 0;
-        }
-
-        switch (currentOperation) {
-
-    /*Прибавление*/
-            case ADD:
-                number1 = result.get(0);
-                number2 = result.get(1);
-
-                result.removeAll(result);
-
-                result.add(number1 + number2);
-
-                tv1.setText(String.format("%.0f", result.get(0)));
-                break;
-
-      /*Вычитание*/
-            case SUBTRACT:
-                number1 = result.get(0);
-                number2 = result.get(1);
-
-                result.removeAll(result);
-
-                result.add(number1 - number2);
-
-                tv1.setText(String.format("%.0f", result.get(0)));
-                break;
-
-
-        }
-    }
 }

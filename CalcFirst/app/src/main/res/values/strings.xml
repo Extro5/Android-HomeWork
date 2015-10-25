@@ -14,4 +14,5 @@
     <string name="btn11"> 9 </string>
     <string name="btn12"> = </string>
     <string name="btn13"> 0 </string>
+    <string name="btnc"> C </string>
 </resources>
