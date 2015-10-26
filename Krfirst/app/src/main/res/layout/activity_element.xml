@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.coole.spisokpost.krfirst.ElementActivity"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Гитара"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="Diduo"
+        android:textSize="14dp"
+        />
+
+
+
+
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Заводская гитара из клена, подойдет для обучения в музыкальной школе или дома, струны нейлоновые, качественные, мягкий чехол в комплекте."
+        android:gravity="center"
+        android:textSize="17dp"
+        android:background="#808080"
+        android:layout_marginBottom="20dp"
+
+
+
+        />
+
+
+
+
+
+</LinearLayout>
